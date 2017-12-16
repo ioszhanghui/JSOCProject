@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
+#import "SecondViewController.h"
 
 @interface ViewController ()<UIWebViewDelegate>
 
@@ -33,6 +34,11 @@
         NSArray * args=[JSContext currentArguments];
         NSDictionary * info =[self parseJSONStringToNSDictionary:[[args objectAtIndex:0] toString]];
         NSLog(@"%@",[info objectForKey:@"message"]);
+        
+    };
+    context[@"goto"]=^(){
+        
+        [self presentViewController:[SecondViewController new] animated:YES completion:nil];
     };
     
     //oc 调用 js

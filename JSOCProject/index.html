@@ -15,15 +15,24 @@
 	</head>
 	<body>
 		<button class="btn">往OC传参数</button>
+        <button class="btn1">页面跳转</button>
         <button onclick="test(val)";>往H5传参数</button>
 		<script type="text/javascript">
 			var obj =document.getElementsByClassName('btn');
                 obj[0].onclick=function () {
                 convert('{"code":"300","message":"获取成功"}');
+                
 			};
-        function test(val){
-          document.getElementsByClassName('btn')[0].style.backgroundColor=val.color;
-        }
+        
+        var obj1 =document.getElementsByClassName('btn1');
+            obj1[0].onclick=function () {
+            goto();
+        };
+            function test(val){
+            document.getElementsByClassName('btn')[0].style.backgroundColor=val.color;
+            }
+        
+        
 		</script>
 	</body>
 </html>
